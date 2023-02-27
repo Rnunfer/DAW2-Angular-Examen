@@ -1,0 +1,6 @@
+<h1>Detalles del Cliente: {{cliente.nombre}}</h1>
+<h3>Edad: {{cliente.edad}}</h3>
+<h3>Género: {{cliente.genero}}</h3>
+<ul>Productos:
+  <li *ngFor="let producto of cliente.carrito">Nombre: {{producto.nombre}} - Precio: {{producto.precio}} - Cantidad: {{producto.cantidad}}</li>
+</ul>

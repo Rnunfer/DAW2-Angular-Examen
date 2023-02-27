@@ -1,0 +1,81 @@
+<h2>Registrar nuevo cliente</h2>
+<hr>
+
+<div class="row">
+  <div class="col ml-3">
+    <form [formGroup]="form" autocomplete="off" (submit)="submit()">
+
+      <!-- Campo de Nombre -->
+      <div class="mb-3 row">
+        <label class="col-sm-3 col-form-label">Nombre</label>
+        <div class="col-sm-9">
+          <input type="text"
+                  class="form-control"
+                  formControlName="nombre">
+        </div>
+        <div class="col-sm-3"></div>
+        <div *ngIf="this.form.controls['nombre'].touched && this.form.controls['nombre'].invalid" class="alert alert-danger col-sm-9">
+          <div *ngIf="this.form.controls['nombre'].errors">El campo nombre no puede estar vacío</div>
+        </div>
+      </div>
+
+      <!-- Campo de Edad -->
+      <div class="mb-3 row">
+        <label class="col-sm-3 col-form-label">Edad</label>
+        <div class="col-sm-9">
+          <input type="number"
+                  class="form-control"
+                  formControlName="edad">
+        </div>
+        <div class="col-sm-3"></div>
+        <div *ngIf="this.form.controls['edad'].touched && this.form.controls['edad'].invalid" class="alert alert-danger col-sm-9">
+          <div *ngIf="this.form.controls['edad'].errors">El campo edad debe ser superior a 0</div>
+        </div>
+      </div>
+
+      <!-- Campo de Genero -->
+      <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Género</label>
+        <div class="col-sm-9">
+
+          <div class="form-check">
+            <input  class="form-check-input"
+                    type="radio"
+                    value="M"
+                    id="radioMasculino"
+                    name="flexRadioDefault"
+                    >
+            <label class="form-check-label" for="flexRadioDefault1">
+              Masculino
+            </label>
+          </div>
+          <div class="form-check">
+            <input  class="form-check-input"
+                    type="radio"
+                    value="F"
+                    id="radioFemenino"
+                    name="flexRadioDefault">
+            <label class="form-check-label" for="flexRadioDefault2">
+              Femenino
+            </label>
+          </div>
+
+        </div>
+
+
+    </div>
+
+      <!-- Boton Guardar -->
+      <div class="row">
+        <div class="col">
+          <button type="submit"
+                  class="btn btn-primary float-end">
+                  Registrar
+          </button>
+        </div>
+      </div>
+
+    </form>
+
+  </div>
+</div>
